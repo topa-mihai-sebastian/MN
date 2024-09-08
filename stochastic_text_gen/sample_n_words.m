@@ -1,6 +1,14 @@
 function retval = sample_n_words (text,  widx, kscvidx, k, stoch, word_set, n)
-  % Sample word using sample_next_word from the last k elements of text (k-seq), ad it to the end of text
-  % repeat n times
-  % This function is not tested by the checker, it can be tested as a binus by running `run tema1_script.m`
+  for i = 1:n
+    %  probabilities for next word
+    probs = sample_next_word(text, widx, kscvidx, k, stoch);
+    
+    next_word = prob_choose(probs, word_set);
+    
+    % append next word
+    text = [text, next_word];
+    
+  endfor
+  
   retval = text;
 endfunction
