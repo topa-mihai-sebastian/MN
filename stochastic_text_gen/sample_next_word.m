@@ -1,3 +1,13 @@
 function probs = sample_next_word (text, words_idx, k_secv_idx, k, stoch)
-  % return scaled or unscaled probabilities (line of the stochastic matrix) corresponding to the last k-squence of text
+  for i = 1:n
+    %  Probabilities next word
+    probs = sample_next_word(text, widx, kscvidx, k, stoch);
+    
+    next_word = prob_choose(probs, word_set);
+    
+    % append next word
+    text = [text, next_word];
+  endfor
+  
+  retval = text;
 endfunction
