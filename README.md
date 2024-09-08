@@ -93,3 +93,10 @@
 ## `word_idx`
 
 - Pune fiecare cuvânt unic din `distinct_wds` în dicționar la un index unic.
+
+## `stochastic_matrix`
+- converesc cuvintele secvențele de cuvinte în seturi unice pentru a accelera accesul la date.
+- prealoc matricea de rezultate `retval` cu zerouri.
+- calculez frecvențele de apariție a fecărui cuvânt care urmează
+după o secvență de cuvinte de `lungime k`. Frecvențele sunt actualizate în matricea
+retval.
